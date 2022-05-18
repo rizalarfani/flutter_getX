@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:state_manager/controllers/count_controller.dart';
+// import 'package:get/get.dart';
+// import 'package:state_manager/controllers/count_controller.dart';
+import 'package:state_manager/unique_id.dart';
 // import 'package:state_manager/controllers/orang_controllers.dart';
 // import 'package:state_manager/models/orang.dart';
 
@@ -15,46 +16,46 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      home: UniqueId(),
     );
   }
 }
 
 // With GetBuilder state simple
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+// class MyHomePage extends StatelessWidget {
+//   const MyHomePage({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("State Manager GetX"),
-      ),
-      body: Center(
-        child: GetBuilder<CountController>(
-          init: CountController(),
-          builder: (controller) => Text(
-            "Anggka ${controller.counter}",
-            style: const TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-      ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          FloatingActionButton(
-            tooltip: 'Counter',
-            child: const Icon(Icons.plus_one),
-            onPressed: () => Get.find<CountController>().incrementSimple(),
-          )
-        ],
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text("State Manager GetX"),
+//       ),
+//       body: Center(
+//         child: GetBuilder<CountController>(
+//           init: CountController(),
+//           builder: (controller) => Text(
+//             "Anggka ${controller.counter}",
+//             style: const TextStyle(
+//               fontSize: 30,
+//               fontWeight: FontWeight.bold,
+//             ),
+//           ),
+//         ),
+//       ),
+//       floatingActionButton: Row(
+//         mainAxisAlignment: MainAxisAlignment.end,
+//         children: [
+//           FloatingActionButton(
+//             tooltip: 'Counter',
+//             child: const Icon(Icons.plus_one),
+//             onPressed: () => Get.find<CountController>().incrementSimple(),
+//           )
+//         ],
+//       ),
+//     );
+//   }
+// }
 
 
 // With GetX state Reactive
